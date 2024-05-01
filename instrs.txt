@@ -1,0 +1,80 @@
+--------------------------------------------
+		INSTRUCTIONS
+
+INSTR:
+
+instruction
+
+functionality
+
+encoding format
+
+
+--------------------------------------------
+
+ADD:
+
+add Rx, Ry
+
+Rx = Rx + Ry; PC++
+
+0100 xx yy
+
+--------------------------------------------
+
+
+BNEZR2:
+
+bnezR2 imm
+
+If R2 != 0, 
+PC = PC + imm
+Else, PC++
+Imm: [-8, 7]
+
+1011 iiii
+
+--------------------------------------------
+
+LUIR1:
+
+luiR1 imm
+
+R1 = iiii0000
+0110 iiii
+
+--------------------------------------------
+
+ORIR1:
+
+oriR1 imm
+
+R1 = R1 | iiii
+0111 iiii
+
+--------------------------------------------
+
+FUNC:
+
+func Rx, Ry, Rz
+
+Rx = hash(Rx, Ry)
+00 xx yy zz
+
+--------------------------------------------
+
+0xFA:
+luiR1 15
+oriR1 10
+
+0x19:
+luiR1 1
+oriR1 9
+
+0xE3:
+luiR1 14
+oriR1 3
+
+0x66:
+luiR1 6
+oriR1 6
